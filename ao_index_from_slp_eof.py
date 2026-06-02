@@ -122,6 +122,6 @@ ax2.axvspan(int(period.start), int(period.stop), color='red', alpha=0.15, label=
 ax2.set_xlim(1200, 1600)
 ax2.set_ylabel('Standardized AO Index')
 ax2.legend(loc='upper right')
-plt.savefig(r'D:\ruanjian\Python\Pycharm\pythonproject\AO_Regression_Map.pdf',
+plt.savefig(r'D:\Pycharm\pythonproject\AO_Regression_Map.pdf',
             dpi=400, bbox_inches='tight', format='pdf')
 plt.show()
