@@ -1,7 +1,6 @@
 import xarray as xr
 import os
 
-# 1. 定义路径
 src_dir = r"D:\CMIP6\PMIP\past1000\ua"
 output_dir = r"D:\CMIP6\PMIP\past1000\ua\ua_interpolated_all"
 target_file = r"D:\CMIP6\MERRA-2\U_all\MERRA2_100.instM_3d_asm_Np.198001.SUB.nc"
@@ -17,7 +16,6 @@ target_plev = ds_target.lev
 for filename in os.listdir(src_dir):
     if filename.endswith(".nc"):
         file_path = os.path.join(src_dir, filename)
-        # 读取 CMIP6 数据
         ds_src = xr.open_dataset(file_path)
         ds_src['plev'] = ds_src['plev'] / 100.0
         ds_src.plev.attrs['units'] = 'hPa'
