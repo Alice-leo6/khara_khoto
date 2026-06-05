@@ -19,7 +19,7 @@ def make_boundary_path(lon, lat):
         np.stack([lons[:, 0], lats[:, 0]], axis=1)
     ])
     return mpath.Path(coords)
-slp_ds = xr.open_dataset(r'D:\CMIP6\PMIP\past1000\psl\psl_Amon_MRI-ESM2-0_past1000_r1i1p1f1_gn_085001-184912.nc')
+slp_ds = xr.open_dataset(r'D:\CMIP6\PMIP\past1000\psl\psl_Amon_past1000_r1i1p1f1_gn_085001-184912.nc')
 slp = slp_ds['psl']  # Pa -> hPa
 slp_djf = slp.resample(time='QS-DEC').mean().dropna('time')
 slp_djf = slp_djf.sel(time=slp_djf['time.month'] == 12)
