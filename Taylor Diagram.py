@@ -31,11 +31,10 @@ def calculate_strict_metrics(ref_raw, mod_raw, ref_nodata, mod_nodata):
         'n': n_points
     }
 
-merra_path = r"D:\CMIP6\MERRA-2\MERRA2_SLP_Mean_1980_2000.tif"
-cmip6_dir = r"D:\CMIP6\PMIP\Picontrol\psl\psl_interpolated"
+merra_path = r"file storage location"
+cmip6_dir = r"file storage location"
 with rasterio.open(merra_path) as src:
     ref_vals = src.read(1)
-    # MERRA-2 是 Top-down (90 -> 19)，我们在读取后立即翻转它
     ref_vals = np.flipud(ref_vals)
     ref_nd = src.nodata
     ref_shape = src.shape
